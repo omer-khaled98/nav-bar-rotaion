@@ -1,0 +1,170 @@
+/* start variables */
+:root {
+  --main-colo: #10cab7;
+  --secondary-color: #2c4755;
+  --section-padding: 60px;
+  --section-background: #f6f6f6;
+  --main-duration: 0.5s;
+}
+/*end variables */
+/* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Work Sans", sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  color: #222;
+  background-color: #333;
+}
+
+.container {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* end Global Rules */
+/* ================
+      start component
+   ===================*/
+.container{
+  background-color: #fafafa;
+  transform-origin: top left;
+  transition: all 0.5s linear;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 50px;
+  /* margin: 0; */
+}
+.container.show-nav{
+  transform: rotate(-20deg);
+
+}
+.container img{
+  max-width: 100%;
+}
+.circle-container{
+position: fixed;
+top: -100px;
+left: -100px;
+}
+.circle{
+  background-color: #ff7979;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: fixed;
+    transition: all 0.5s linear;
+
+}
+
+.circle button{
+position: absolute;
+top: 50%;
+left: 50%;
+height: 100px;
+background-color: transparent;
+color: white;
+border: none;
+font-size: 26px;
+
+}
+.circle button:focus{
+outline: none;
+}
+.circle button#open{
+  left: 60%;
+  
+}
+.circle button#close{
+  top: 60%;
+transform: rotate(90deg);
+transform-origin: top left;
+}
+.container.show-nav .circle{
+  transform: rotate(-70deg);
+}
+
+.container.show-nav + nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+} 
+.content{
+  max-width: 1000px;
+  margin: 50px auto;
+}
+.content h1{
+  margin: 0;
+}
+.content small {
+  color: #555;
+  font-style: italic;
+  
+}
+.content p {
+  color: #333;
+  /* font-style: italic; */
+line-height: 1.5;
+}
+
+nav {
+  position: fixed;
+  z-index: 100;
+left: 0;
+bottom: 40px;
+
+}
+nav ul {
+list-style-type: none;
+padding-left: 30px;
+/* cursor: pointer; */
+}
+nav ul li {
+  text-transform: uppercase;
+  color: #fff;
+  margin: 40px 0 ;
+ transform: translateX(-100%);
+ transition: transform 0.4s ease-in;
+ cursor: pointer;
+ 
+}
+nav ul li:hover {
+color: #ff7979;
+}
+nav ul li + li {
+  margin-left: 30PX;
+  transform: translateX(-150%);
+}
+nav ul li + li + li {
+  margin-left: 60PX;
+  transform: translateX(-200%);
+
+}
+nav ul li i {
+padding: 5px;
+font-size: 20px;
+margin-right: 10px;
+
+}
